@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Media Query Test</title>
+<style>
+  /* Base styles (mobile first) */
+  #Offerings div {
+    display: block;
+    border: 2px solid #444;
+    padding: 1rem;
+  }
+
+  #Offerings section {
+    background-color: #76885B;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Span class forces full width in grid */
+  .span {
+    grid-column: 1 / -1;
+  }
+
+  /* Media Query: 600px and above */
+  @media screen and (min-width: 600px) {
+    #Offerings div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<section id="Offerings">
+  <h2>Our Offerings</h2>
+  <div>
+    <section>
+      <h3>Artisan Provisions</h3>
+      <p>Hand-selected, seasonal ingredients sourced from our estate farm.</p>
+    </section>
+
+    <section>
+      <h3>Exclusive Dining Experiences</h3>
+      <p>Intimate chef-led tastings and farm-to-table feasts.</p>
+    </section>
+
+    <section class="span">
+      <h3>The Field & Feast Monthly Basket</h3>
+      <p>Curated selection of premium seasonal ingredients delivered to your doorstep.</p>
+    </section>
+  </div>
+</section>
+
+</body>
+</html>

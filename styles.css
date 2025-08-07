@@ -68,6 +68,8 @@ table {
 /* GLOBAL STYLES (mobile first/small) */
 html{
     font-family: 'Playfair Display';
+    background-color: var(--white);
+    width: fit-content;
 }
 
 img{
@@ -75,6 +77,10 @@ img{
     margin-left: auto;
     margin-right: auto;
     padding: 2rem;
+}
+
+#offerings div{
+    display: block;
 }
 
     /* HEADER STYLES */
@@ -99,8 +105,8 @@ header p{
 
 nav{
     background-color: var(--gold);
-    font-size: 2.5rem;
-    margin-bottom: 6rem;
+    font-size: 1.2rem;
+    margin-bottom: 5rem;
 }
 
 nav ul{
@@ -118,22 +124,16 @@ a{
 
 /* MAIN STYLES */
 
-main{
-    background-color: var(--white);
-}
-
 h2{
-    font-size: 3.5rem;
-    margin-left: 3rem;
+    font-size: 2rem;
+    margin: 1.5rem;
 }
 
-main > p{
+main p{
     padding-top: 1rem;
     padding-bottom: 3rem;
     border-bottom: 2px solid var(--gold);
-    margin-bottom: 3rem;
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin: 1.5rem;
     line-height: 3rem;
     font-size: 1rem;
 }
@@ -141,15 +141,20 @@ main > p{
 /* OFFERINGS SECTION STYLES */
 
 
-#Offerings section{
+#offerings section{
     background-color: var(--green);
     padding: 2rem;
-    margin: 3rem;
+    margin: 1.5rem;
     border-radius: 1rem;
     color: var(--white);
     line-height: 3rem;
 }
 
+#offerings p{
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
 section h3{
     font-size: 2.5rem;
     font-weight: bold;
@@ -163,25 +168,30 @@ section ul{
 
 /* GALLERY SECTION STYLES*/
 
-#gallery p{
+#gallery h3{
     padding-top: 1rem;
     line-height: 3rem;
     font-size: 1rem;
 }
 
-section ~ section h2{
-    border-top: 2px solid var(--gold);
-    padding-top: 3rem;
-    margin: 0;
+#gallery p{
+    border-bottom: none;
+    margin-left: 0;
 }
 
-#gallery section p{
+#gallery h2{
+    border-top: 2px solid var(--gold);
+    padding-top: 3rem;
+    margin-left: 0;
+}
+
+#gallery section h3{
     text-align: center;
     font-style: italic;
     padding: 2rem;
 }
 
-#gallery > section section{
+#gallery > div section{
     box-shadow: 4px 4px 20px var(--grey);
     border-radius: 1rem;
     margin-top: 2rem;
@@ -237,7 +247,57 @@ footer a{
 }
 
 /* MEDIA QUERY (medium) */
+@media screen and (min-width: 600px){
+    #offerings div{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #offerings section{
+        margin: 1rem;
+    }
+
+    .span{
+        grid-column: 1/-1;
+    }
+
+    #gallery-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    #gallery p{
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
 
 /* MEDIA QUERY (large) */
+@media screen and (min-width: 900px){
+    
+    #gallery-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+
+}
 
 /* MEDIA QUERY (xl) */
+@media screen and (min-width: 1200px){
+
+    #gallery-grid{
+        display: flex;
+    }
+
+    main{
+        margin: 4rem;
+    }
+
+    #gallery section h3{
+       padding: 1rem;
+       line-height: 2rem;
+    }
+
+}
